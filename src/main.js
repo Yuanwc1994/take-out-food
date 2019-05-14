@@ -31,3 +31,9 @@ router.map({
 
 router.start(app, '#app');
 router.go('/goods');
+
+// APIcloud引入原生全局变量
+window.apiready = function () {
+  console.log('进入了apiready')
+  window.$api = api || null
+};
