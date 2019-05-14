@@ -30,7 +30,7 @@
                                     <span class="old" v-show="food.oldPrice">&yen;<i>{{food.oldPrice}}</i></span>
                                 </div>
                             </div>
-                            <div class="downloads" @click.stop="downloads(food)">图片下载<i class="icon-keyboard_arrow_right"></i></div>
+                            <div class="downloads" @click.stop="downloads(food)"><i class="icon-download3"></i></div>
                         </li>
                     </ul>
                 </li>
@@ -67,7 +67,7 @@ export default {
     methods: {
         downloads(item) {
             let url = item.icon.split('?')[0]
-            console.log('需要下载APIcloud自定义loader查看图片下载功能',url);
+            console.log('需要下载APIcloud自定义loader查看图片下载功能', url);
 
             var downloadManager = window.$api.require('downloadManager');
             downloadManager.enqueue({
@@ -157,7 +157,7 @@ $color: rgb(147, 153, 159);
         .food-item {
             position: relative;
             display: flex;
-            margin: 18px;
+            margin: 16px;
             padding-bottom: 18px;
             @include border-1px(rgba(7, 17, 27, 0.1));
             &:last-child {
@@ -213,14 +213,12 @@ $color: rgb(147, 153, 159);
             }
             .downloads {
                 position: absolute;
-                top: 0;
+                top: 2px;
                 right: 0;
                 z-index: 1;
                 font-size: 14px;
-                color: #07111b;
                 i {
-                    font-size: 18px;
-                    vertical-align: middle;
+                    color: #93999f;
                 }
             }
         }
